@@ -66,6 +66,21 @@ public class MyLinkedList {
 		
 		}
 	
+	void deleteNode(int data) {
+		Node tNode = head;
+		if(tNode.val == data) {
+			head = tNode.next;
+			return;
+		}
+		while(tNode.next!=null) {
+			if(tNode.next.val == data) {
+				tNode.next = tNode.next.next;
+				return;
+			}
+		}
+		System.out.println("Element with given data does not exist");
+	}
+	
 	
 	public static void main(String args[]) {
 		MyLinkedList list = new MyLinkedList();
@@ -75,6 +90,8 @@ public class MyLinkedList {
 			list.middleElement();
 		}
 		list.addElementAtLast(100);
+		list.printList();
+		list.deleteNode(4);
 		list.printList();
 		
 	}
