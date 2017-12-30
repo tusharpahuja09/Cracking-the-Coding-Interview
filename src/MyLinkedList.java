@@ -55,6 +55,18 @@ public class MyLinkedList {
 		newNode.next = null;
 	}
 	
+	void insertAfterNode(Node prevNode, int data) {
+		if(prevNode == null) {
+			System.out.println("The previous Node cannot be null");
+			return;
+		}
+		Node newNode = new Node(data);
+		newNode.next = prevNode.next;
+		prevNode.next = newNode;
+		
+		}
+	
+	
 	public static void main(String args[]) {
 		MyLinkedList list = new MyLinkedList();
 		for(int i=0;i<5;i++) {
